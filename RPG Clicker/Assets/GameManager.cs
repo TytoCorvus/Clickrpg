@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
 		field = GameObject.Find ("Field");
 		ui = GameObject.Find ("Canvas");
 		inputManager = GameObject.Find ("InputManager");
+		enemySpace = GameObject.Find ("EnemySpace");
+		allySpace = GameObject.Find ("AllySpace");
 	}
 	
 	// Update is called once per frame

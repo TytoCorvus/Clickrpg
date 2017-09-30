@@ -5,14 +5,14 @@ using System;
 
 public abstract class Enemy : MonoBehaviour {
 
-	private static double defaultHP;
-	private static float defaultTimeBetweenAttacks;
+	public static double defaultHP;
+	public static float defaultTimeBetweenAttacks;
 
-	[SerializeField] private double maxHP;
+	[SerializeField] public double maxHP { get; set; }
 	[SerializeField] public double currentHP { get; set; }
 	private float timeBetweenAttacks;
-	private float timeSinceLastAttack;
-	private bool readyToAttack;
+	public float timeSinceLastAttack { get; set; }
+	public bool readyToAttack;
 
 
 	// Use this for initialization
@@ -42,6 +42,13 @@ public abstract class Enemy : MonoBehaviour {
 		currentHP -= dmg;
 	}
 
+	public float getTimeBetweenAttacks(){
+		return timeBetweenAttacks;
+	}
+
+	public void setTimeBetweenAttacks(float t){
+		timeBetweenAttacks = t;
+	}
 	public void OnMouseDown(){
 		Debug.Log ("Damage Taken");
 		TakeDamage (5.0);
