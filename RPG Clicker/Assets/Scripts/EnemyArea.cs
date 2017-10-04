@@ -13,13 +13,18 @@ public class EnemyArea : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
+		enemies = new List<GameObject>();
 		//basicEnemy1 = Instantiate (Resources.Load (path, typeof(GameObject))) as GameObject;
-		basicEnemy1 = Resources.Load(path, typeof(GameObject)) as GameObject;
-		Instantiate (basicEnemy1);
-
-		//addEnemy (basicEnemy1, 1f, 1f);
-		//Debug.Log ("Enemy Field position is: " + transform.position.ToString ());
-		//Debug.Log ("BasicEnemy position is: + " + enemies[0].transform.position.ToString()); 
+		basicEnemy1 = Instantiate(Resources.Load(path)) as GameObject;
+		basicEnemy1.transform.parent = gameObject.transform;
+		addEnemy (basicEnemy1, 1f, 1f);
+		
+		basicEnemy1 = Instantiate(Resources.Load(path)) as GameObject;
+		basicEnemy1.transform.parent = gameObject.transform;
+		addEnemy (basicEnemy1, 1f, -3f);
+		Debug.Log ("Enemy Field position is: " + transform.position.ToString ());
+		Debug.Log ("BasicEnemy position is: + " + enemies[0].transform.position.ToString()); 
 
 	}
 	
