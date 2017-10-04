@@ -5,7 +5,8 @@ using UnityEngine;
 public class BasicEnemy : Enemy {
 
 	private static float defaultTimeBetweenAttacks = 4f;
-		
+	[SerializeField] public GameObject healthBar;
+	private GameObject canvas;
 	//[SerializeField] private double maxHP = 100;
 
 
@@ -15,6 +16,9 @@ public class BasicEnemy : Enemy {
 		this.setTimeBetweenAttacks(defaultTimeBetweenAttacks);
 		timeSinceLastAttack = 0f;
 		readyToAttack = false;
+		canvas = GameObject.Find("Canvas");
+		healthBar = Instantiate(healthBar);
+		healthBar.transform.parent = canvas.transform;
 
 	}
 	
