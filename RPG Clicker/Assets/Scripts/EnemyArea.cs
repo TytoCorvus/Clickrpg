@@ -23,9 +23,6 @@ public class EnemyArea : MonoBehaviour {
 		basicEnemy1 = Instantiate(Resources.Load(path)) as GameObject;
 		basicEnemy1.transform.parent = gameObject.transform;
 		addEnemy (basicEnemy1, 1f, -3f);
-		Debug.Log ("Enemy Field position is: " + transform.position.ToString ());
-		Debug.Log ("BasicEnemy position is: + " + enemies[0].transform.position.ToString()); 
-
 	}
 	
 	// Update is called once per frame

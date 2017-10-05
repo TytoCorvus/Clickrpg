@@ -5,7 +5,7 @@ using System;
 
 public abstract class Enemy : MonoBehaviour {
 
-	public static double defaultHP;
+	public static double defaultHP = 100;
 	public static float defaultTimeBetweenAttacks;
 
 	[SerializeField] public double maxHP { get; set; }
@@ -50,7 +50,6 @@ public abstract class Enemy : MonoBehaviour {
 		timeBetweenAttacks = t;
 	}
 	public void OnMouseDown(){
-		Debug.Log ("Damage Taken");
 		TakeDamage (5.0);
 	}
 

@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicEnemy : Enemy {
 
 	private static float defaultTimeBetweenAttacks = 4f;
-	[SerializeField] public GameObject healthBar;
-	private GameObject canvas;
+	[SerializeField] public HealthBarScript health;
+	private Transform healthBar;
+	private float damage = 4;
 	//[SerializeField] private double maxHP = 100;
 
 
 	// Use this for initialization
 	void Start () {
-		currentHP = maxHP;
+		currentHP = 100;
+		maxHP = 100;
 		this.setTimeBetweenAttacks(defaultTimeBetweenAttacks);
 		timeSinceLastAttack = 0f;
-		readyToAttack = false;
-		canvas = GameObject.Find("Canvas");
-		healthBar = Instantiate(healthBar);
-		healthBar.transform.parent = canvas.transform;
-
+		
+		health = transform.GetChild(0).GetChild(0).gameObject.GetComponent<HealthBarScript>();
 	}
 	
 	// Update is called once per frame
@@ -30,16 +30,18 @@ public class BasicEnemy : Enemy {
 			timeSinceLastAttack = 0f;
 		}
 
-		if (currentHP < 0) {
-			Destroy (gameObject, 2.0f);
+		if (currentHP <= 0) {
+			Destroy (gameObject, 0f);
 		}
+		
+		health.SetHealthRatio((float)(currentHP/maxHP));
 	}
 		
 	override public void Attack(){
-		Debug.Log ("Attack event");
 	}
 
 	public void OnMouseDown(){
-
+		if(currentHP - damage >= 0){ currentHP -= damage;}
+		else{ currentHP = 0; }
 	}
 }

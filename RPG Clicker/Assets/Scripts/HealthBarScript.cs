@@ -15,22 +15,31 @@ public class HealthBarScript : MonoBehaviour {
 	void Start () {
 		Transform currentBar = transform.Find("CurrentHealthBar");
 		currentHealthBar = currentBar.GetComponent<Image>();
-		Debug.Log("Instantiation Complete");
+		currentHPRatio = 1f;
 	    
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if(currentHPRatio < .05){
-			currentHPRatio -= .01;
-		}
-		currentHealthBar.rectTransform.localScale = new Vector3(currentHPRatio, 1f, 1f);
+		currentHealthBar.transform.localScale = new Vector3(currentHPRatio, 1f, 1f);
+		UpdateColor();
 		
 	}
 	
-	public void setHealthRatio(float ratio){
+	public void SetHealthRatio(float ratio){
 		currentHPRatio = ratio;
 		
+	}
+	
+	public void UpdateColor(){
+		if(currentHPRatio > .6f){
+			currentHealthBar.color = new Vector4(0.0f, currentHPRatio, 0.0f, 1.0f);
+		}
+		else if(currentHPRatio > .3f){
+			currentHealthBar.color = new Vector4(1f - (3 * currentHPRatio), currentHPRatio * currentHPRatio, 0.0f, 1.0f);
+		}
+		else{
+			currentHealthBar.color = new Vector4(1.0f, 0f, 0f, 1f);
+		}
 	}
 }
