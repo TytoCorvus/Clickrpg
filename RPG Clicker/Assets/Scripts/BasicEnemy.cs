@@ -6,20 +6,21 @@ using UnityEngine.UI;
 public class BasicEnemy : Enemy {
 
 	private static float defaultTimeBetweenAttacks = 4f;
-	[SerializeField] public HealthBarScript health;
-	private Transform healthBar;
+	public BarScript health;
+	public BarScript attackTimer;
+
 	private float damage = 4;
-	//[SerializeField] private double maxHP = 100;
+	[SerializeField] private double maxHP = 100;
 
 
 	// Use this for initialization
 	void Start () {
 		currentHP = 100;
-		maxHP = 100;
 		this.setTimeBetweenAttacks(defaultTimeBetweenAttacks);
 		timeSinceLastAttack = 0f;
 		
-		health = transform.GetChild(0).GetChild(0).gameObject.GetComponent<HealthBarScript>();
+		health = transform.GetChild(0).GetChild(0).gameObject.GetComponent<BarScript>();
+		attackTimer = transform.GetChild(0).GetChild(1).gameObject.GetComponent<BarScript>();
 	}
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class BasicEnemy : Enemy {
 			Destroy (gameObject, 0f);
 		}
 		
-		health.SetHealthRatio((float)(currentHP/maxHP));
+		//health.SetRatio((float)(currentHP/maxHP));
 	}
 		
 	override public void Attack(){

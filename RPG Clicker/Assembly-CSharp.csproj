@@ -51,8 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AllyArea.cs" />
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\Scripts\AllyArea.cs" />
+     <Compile Include="Assets\Scripts\BarScript.cs" />
      <Compile Include="Assets\Scripts\BasicEnemy.cs" />
      <Compile Include="Assets\Scripts\ClickManager.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
