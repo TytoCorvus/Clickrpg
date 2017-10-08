@@ -1,7 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,8 +20,6 @@ public class BarScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Transform bar = transform.Find("CurrentBar");
-		if(bar == null){ Debug.Log("Bar is null");}
-		/*
 		currentBar = bar.GetComponent<Image>();
 		
 		if(startRatio != null){
@@ -33,31 +27,22 @@ public class BarScript : MonoBehaviour {
 		}
 		else{ currentRatio = 1f;}
 		
-		if(isSolidColor){currentBar.color = color;}
-		*/
+		if(isSolidColor){currentBar.color = new Color32((byte)color.x, (byte)color.y, (byte)color.z, (byte)color.w);}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//currentBar.transform.localScale = new Vector3(currentRatio, 1f, 1f);
-		//UpdateColor();
-		testTime -= Time.deltaTime;
-		if(testTime < 0 ){
-			Transform bar = transform.Find("CurrentBar");
-			if(bar == null){ Debug.Log("Bar is null");}
-			else{ Debug.Log("Bar exists");}
-		}
-		
+		currentBar.transform.localScale = new Vector3(currentRatio, 1f, 1f);
+		UpdateColor();
 	}
 	
-	/*
+
 	public void SetRatio(float ratio){
 		currentRatio = ratio;
-		
 	}
 	
 	public void UpdateColor(){
-		if(isSolidColor){
+		if(!isSolidColor){
 			if(currentRatio > .6f){
 				currentBar.color = new Vector4(0.0f, currentRatio, 0.0f, 1.0f);
 			}
@@ -68,7 +53,8 @@ public class BarScript : MonoBehaviour {
 				currentBar.color = new Vector4(1.0f, 0f, 0f, 1f);
 			}
 		}
+        else{currentBar.color = new Color32((byte)color.x, (byte)color.y, (byte)color.z, (byte)color.w);}
+
 	}
-	*/
 }
 

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,10 +35,12 @@ public class BasicEnemy : Enemy {
 			Destroy (gameObject, 0f);
 		}
 		
-		//health.SetRatio((float)(currentHP/maxHP));
+		health.SetRatio((float)(currentHP/maxHP));
+        attackTimer.SetRatio((float)(timeSinceLastAttack/defaultTimeBetweenAttacks));
 	}
 		
 	override public void Attack(){
+        attackTimer.SetRatio(0f);
 	}
 
 	public void OnMouseDown(){
