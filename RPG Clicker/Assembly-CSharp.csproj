@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\Scripts\AbilityScript.cs" />
+     <Compile Include="Assets\Scripts\Ally.cs" />
      <Compile Include="Assets\Scripts\AllyArea.cs" />
      <Compile Include="Assets\Scripts\BarScript.cs" />
      <Compile Include="Assets\Scripts\BasicEnemy.cs" />

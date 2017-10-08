@@ -24,7 +24,7 @@ public class BasicEnemy : Enemy {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixeUpdate () {
 		timeSinceLastAttack += Time.deltaTime;
 		if (timeSinceLastAttack >= this.getTimeBetweenAttacks()) {
 			Attack ();
@@ -37,6 +37,7 @@ public class BasicEnemy : Enemy {
 		
 		health.SetRatio((float)(currentHP/maxHP));
         attackTimer.SetRatio((float)(timeSinceLastAttack/defaultTimeBetweenAttacks));
+
 	}
 		
 	override public void Attack(){
@@ -46,5 +47,7 @@ public class BasicEnemy : Enemy {
 	public void OnMouseDown(){
 		if(currentHP - damage >= 0){ currentHP -= damage;}
 		else{ currentHP = 0; }
+
+
 	}
 }
