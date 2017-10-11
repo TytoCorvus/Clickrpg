@@ -13,7 +13,7 @@ public class BarScript : MonoBehaviour {
 	
 	private Image currentBar;
 	private Image flashingBar;
-	private float currentRatio;
+	public float currentRatio;
 	
 	
 	
@@ -35,7 +35,6 @@ public class BarScript : MonoBehaviour {
 		currentBar.transform.localScale = new Vector3(currentRatio, 1f, 1f);
 		UpdateColor();
 	}
-	
 
 	public void SetRatio(float ratio){
 		currentRatio = ratio;

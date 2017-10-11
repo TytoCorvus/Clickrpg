@@ -52,17 +52,23 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GameManager.cs" />
-     <Compile Include="Assets\Scripts\AbilityScript.cs" />
-     <Compile Include="Assets\Scripts\Ally.cs" />
-     <Compile Include="Assets\Scripts\AllyArea.cs" />
+     <Compile Include="Assets\Scripts\Abilities\Ability.cs" />
      <Compile Include="Assets\Scripts\BarScript.cs" />
-     <Compile Include="Assets\Scripts\BasicEnemy.cs" />
+     <Compile Include="Assets\Scripts\Characters\Allies\Ally.cs" />
+     <Compile Include="Assets\Scripts\Characters\Character.cs" />
+     <Compile Include="Assets\Scripts\Characters\Enemies\BasicEnemy.cs" />
+     <Compile Include="Assets\Scripts\Characters\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\ClickManager.cs" />
-     <Compile Include="Assets\Scripts\Enemy.cs" />
-     <Compile Include="Assets\Scripts\EnemyArea.cs" />
+     <Compile Include="Assets\Scripts\Events\Event\AttackEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\Event\Event.cs" />
+     <Compile Include="Assets\Scripts\Events\EventListeners\IAttackEventListener.cs" />
+     <Compile Include="Assets\Scripts\Events\EventListeners\IListener.cs" />
+     <Compile Include="Assets\Scripts\Events\EventManagers\AttackEventManager.cs" />
+     <Compile Include="Assets\Scripts\Events\EventManagers\MasterEventManager.cs" />
+     <Compile Include="Assets\Scripts\Field\AllyArea.cs" />
+     <Compile Include="Assets\Scripts\Field\EnemyArea.cs" />
      <Compile Include="Assets\Scripts\HealthBarScript.cs" />
      <Compile Include="Assets\Scripts\ParticleLifetime.cs" />
-     <Compile Include="Assets\Scripts\ScoreScript.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
