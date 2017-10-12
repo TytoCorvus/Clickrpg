@@ -19,8 +19,6 @@ public class ClickManager : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown (0)) {
 			Instantiate (clickParticles1, pz, transform.rotation);
-            Debug.Log("Hi, Dayne! I am a computer program!");
-            Debug.Log("Also, hello Bryce! I am your humble servant.");
 		}
 	}
 }

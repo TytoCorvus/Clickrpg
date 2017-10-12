@@ -179,6 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 533486274}
   - component: {fileID: 533486273}
+  - component: {fileID: 533486275}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -210,6 +211,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &533486275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 533486272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71938bec312614b2185fefa34ecde7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &539787711
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539787712}
   - component: {fileID: 539787713}
+  - component: {fileID: 539787714}
   m_Layer: 0
   m_Name: AllySpace
   m_TagString: Untagged
@@ -264,6 +277,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &539787714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 539787711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ec350c8cfcef04b81c160e2653a92d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1010787882
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +635,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191b4bfbd40b1b84696445f0355816ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1795744362
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528722721408132, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212344285604350250, guid: ac8f6fcb594abf945a3949e626e744ea,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61731239601577780, guid: ac8f6fcb594abf945a3949e626e744ea,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212344285604350250, guid: ac8f6fcb594abf945a3949e626e744ea,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 211404947
+      objectReference: {fileID: 0}
+    - target: {fileID: 212344285604350250, guid: ac8f6fcb594abf945a3949e626e744ea,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ac8f6fcb594abf945a3949e626e744ea, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2063568629
 GameObject:
   m_ObjectHideFlags: 0
