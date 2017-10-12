@@ -9,6 +9,7 @@ public class Ally : Character, IAttackEventListener {
     private BarScript attackTimer;
     private EnemyArea enemyArea;
     private AllyArea allyArea;
+	private List<Character> targets;
 
     public static double defaultHP = 100;
 
