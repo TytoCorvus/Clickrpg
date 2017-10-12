@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BasicEnemy : Enemy {
+public class BasicEnemy : Enemy, IAttackEventListener {
 
 	private static float defaultTimeBetweenAttacks = 4f;
 	public BarScript health;
@@ -11,6 +11,9 @@ public class BasicEnemy : Enemy {
 
 	private float damage = 4;
 	[SerializeField] private double maxHP = 100;
+	
+	private EnemyArea enemyArea;
+    private AllyArea allyArea;
 
 
 	// Use this for initialization
@@ -22,6 +25,9 @@ public class BasicEnemy : Enemy {
 		
 		health = transform.GetChild(0).GetChild(0).gameObject.GetComponent<BarScript>();
 		attackTimer = transform.GetChild(0).GetChild(1).gameObject.GetComponent<BarScript>();
+		
+		enemyArea = GameObject.Find("EnemySpace").GetComponent<EnemyArea>();
+    	allyArea = GameObject.Find("AllySpace").GetComponent<AllyArea>();
 	}
 	
 	// Update is called once per frame
@@ -49,10 +55,23 @@ public class BasicEnemy : Enemy {
         
     }
 
+		
+	
 	public void OnMouseDown(){
 		if(currentHP - damage >= 0){ currentHP -= damage;}
 		else{ currentHP = 0; }
-
-
+	}
+	
+	public void ReceiveAttackEvent(AttackEvent ae){
+		if(ae.pass == 0){
+    		if(ae.attacker == this){
+    			ae.damageDealt = 10;
+    		}
+    	}
+    	if(ae.pass == 1){
+    		if(ae.target == this){
+    			TakeDamage(ae.damageDealt);
+    		}
+    	}
 	}
 }

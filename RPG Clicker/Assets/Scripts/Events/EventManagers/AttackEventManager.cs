@@ -20,6 +20,10 @@ public class AttackEventManager{
         for(int i = 0; i < listeners.Count; i++){
             listeners[i].ReceiveAttackEvent(ae);
         }
+    	ae.pass = 1;
+    	for(int i = 0; i < listeners.Count; i++){
+            listeners[i].ReceiveAttackEvent(ae);
+        }
     }
 
 }

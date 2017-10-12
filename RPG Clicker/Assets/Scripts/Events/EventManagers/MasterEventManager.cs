@@ -22,4 +22,14 @@ public class MasterEventManager : MonoBehaviour {
             attackEventManager.NewEvent((AttackEvent)e);
         }
     }
+	
+	public void AddNewListener(IListener listener){
+		if(listener is IAttackEventListener){
+			attackEventManager.AddListener(listener);
+		}
+	}
+	
+	public void RemoveListener(IListener listener){
+		
+	}
 }

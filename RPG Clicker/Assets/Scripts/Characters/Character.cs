@@ -5,7 +5,7 @@ using UnityEngine;
 abstract public class Character : MonoBehaviour {
 
     private MasterEventManager eventManager;
-    private List<Character> targets;
+    protected List<Character> targets;
 
     public double maxHitPoints;
     public double currentHitPoints;
@@ -14,7 +14,9 @@ abstract public class Character : MonoBehaviour {
     public float timeSinceLastAction;
 
 
-    public Character(){}
+    public Character(){
+    	targets = new List<Character>();
+    }
 
     public MasterEventManager GetEventManager(){
         return eventManager;

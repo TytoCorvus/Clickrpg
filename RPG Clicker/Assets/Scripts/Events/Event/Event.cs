@@ -5,8 +5,13 @@ using UnityEngine;
 abstract public class Event{
 
 	public GameObject creator;
-
-    public Event(){}
+	public List<Character> resolutionOrder;
+	public int pass;
+	
+    public Event(){
+		pass = 0;
+		resolutionOrder = new List<Character>();
+	}
 
 	public Event(GameObject go){
         creator = go;

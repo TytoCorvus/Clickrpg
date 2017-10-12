@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ally : Character {
+public class Ally : Character, IAttackEventListener {
 
     private Ability[] abilities = new Ability[3];
-    private List<Character> targets = new List<Character>();
     private BarScript health;
     private BarScript attackTimer;
+    private EnemyArea enemyArea;
+    private AllyArea allyArea;
 
     public static double defaultHP = 100;
 
     void Start(){
+    	targets = new List<Character>();
+    	enemyArea = GameObject.Find("EnemySpace").GetComponent<EnemyArea>();
+    	allyArea = GameObject.Find("AllySpace").GetComponent<AllyArea>();
+    	targets = enemyArea.GetEnemies();
+    	if(targets == null){Debug.Log("targets in Ally instance is null");}
+    	SetTarget(targets[0]);
+    	this.GetEventManager().AddNewListener(this);
+    	
     }
 
     //The following methods add an enemy or enemies to the List of targets AFTER clearing them
@@ -54,5 +63,17 @@ public class Ally : Character {
     public Ability GetAbility(int num){
         return abilities[num];
     }
-
+    
+    public void ReceiveAttackEvent(AttackEvent ae){
+    	if(ae.pass == 0){
+    		if(ae.attacker == this){
+    			ae.damageDealt = 10;
+    		}
+    	}
+    	if(ae.pass == 1){
+    		if(ae.target == this){
+    			TakeDamage(ae.damageDealt);
+    		}
+    	}
+	}
 }
